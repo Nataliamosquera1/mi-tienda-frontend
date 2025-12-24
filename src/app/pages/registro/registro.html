@@ -1,0 +1,44 @@
+<form class="form" (ngSubmit)="registrar()">
+  <p class="title">Registro</p>
+  <p class="message">Regístrate ahora y obtén acceso completo a nuestra aplicación.</p>
+
+  <div class="flex">
+    <label>
+      <input required placeholder="" type="text" class="input" [(ngModel)]="nombre" name="nombre">
+      <span>Nombre</span>
+    </label>
+
+    <label>
+      <input required placeholder="" type="text" class="input" [(ngModel)]="apellidos" name="apellidos">
+      <span>Apellidos</span>
+    </label>
+  </div>
+
+  <label>
+    <input required placeholder="" type="text" class="input" [(ngModel)]="correo" name="correo">
+    <span>Correo Electrónico</span>
+  </label>
+
+  <label>
+    <input required placeholder="" type="password" class="input" [(ngModel)]="contrasena" name="contrasena">
+    <span>Contraseña</span>
+  </label>
+
+  <label>
+    <input required placeholder="" type="password" class="input" [(ngModel)]="confirmarContrasena" name="confirmarContrasena">
+    <span>Confirmar Contraseña</span>
+  </label>
+
+  <label>
+    <input placeholder="" type="text" class="input" [(ngModel)]="codigo" name="codigo">
+    <span>Código de Admin (opcional)</span>
+  </label>
+
+  <button type="submit" class="submit">Registrar</button>
+
+  <p class="signin">
+  ¿Ya tienes una cuenta?
+  <a routerLink="/login" style="cursor:pointer;">Iniciar sesión</a>
+</p>
+
+</form>

@@ -1,0 +1,49 @@
+<div class="login-wrapper">
+
+  <!-- Imagen a la izquierda -->
+  <div class="login-image">
+   <img src="login.png" alt="Login imagen" />
+  </div>
+
+  <!-- Formulario a la derecha -->
+  <div class="form-box">
+
+    <form class="form" (ngSubmit)="login()">
+
+      <span class="title">Iniciar Sesión</span>
+      <span class="subtitle">Ingresa tus datos para continuar</span>
+
+      <div class="form-container">
+        <input
+          type="email"
+          class="input"
+          placeholder="Correo electrónico"
+          [(ngModel)]="correo"
+          name="correo"
+          required
+        />
+
+        <input
+          type="password"
+          class="input"
+          placeholder="Contraseña"
+          [(ngModel)]="contrasena"
+          name="contrasena"
+          required
+        />
+      </div>
+
+      <button type="submit">Ingresar</button>
+
+      <p class="error" *ngIf="error">{{ error }}</p>
+    </form>
+
+    <div class="form-section">
+      <p>¿No tienes cuenta? 
+        <a routerLink="/registro">Crear cuenta</a>
+      </p>
+    </div>
+
+  </div>
+
+</div>

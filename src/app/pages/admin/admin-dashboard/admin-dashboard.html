@@ -1,0 +1,44 @@
+<section class="dashboard">
+
+  <h1>Panel de Administración</h1>
+  <p class="subtitle">
+    Gestiona tu tienda desde un solo lugar
+  </p>
+
+  <!-- CARDS -->
+  <div class="cards">
+
+    <div class="card">
+      <span class="icon">📦</span>
+      <h3>Productos</h3>
+      <p>{{ totalProductos }}</p>
+    </div>
+
+    <div class="card">
+      <span class="icon">📂</span>
+      <h3>Categorías</h3>
+      <p>{{ totalCategorias }}</p>
+    </div>
+
+    <div class="card">
+      <span class="icon">👤</span>
+      <h3>Usuarios</h3>
+      <p>{{ totalUsuarios }}</p>
+    </div>
+
+    <div class="card">
+      <span class="icon">🧾</span>
+      <h3>Facturas</h3>
+      <p>{{ totalFacturas }}</p>
+    </div>
+
+  </div>
+
+  <!-- ACCESOS RÁPIDOS -->
+  <div class="actions">
+    <a routerLink="/admin/productos">📦 Gestionar Productos</a>
+    <a routerLink="/admin/categorias">📂 Gestionar Categorías</a>
+    <a routerLink="/admin/usuarios">👤 Gestionar Usuarios</a>
+  </div>
+
+</section>

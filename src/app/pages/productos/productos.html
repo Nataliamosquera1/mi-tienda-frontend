@@ -1,0 +1,15 @@
+<section class="productos-container">
+  <h2 class="titulo">Nuestros productos</h2>
+
+  <div class="productos-grid">
+    <app-producto-card
+      *ngFor="let p of productos"
+      [id]="p.id"
+      [nombre]="p.nombre"
+      [precio]="p.precio"
+      [imagen]="p.imagen"
+      (addToCart)="addToCart($event)"
+      (buyNow)="buyNow($event)"
+    ></app-producto-card>
+  </div>
+</section>

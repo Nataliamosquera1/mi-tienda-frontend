@@ -1,0 +1,9 @@
+<h2>🛒 Mi carrito</h2>
+
+<div *ngIf="productos.length === 0">
+  Tu carrito está vacío
+</div>
+
+<div *ngFor="let p of productos">
+  <p>{{ p.nombre }} — {{ p.cantidad }} x ${{ p.precio | number }}</p>
+</div>

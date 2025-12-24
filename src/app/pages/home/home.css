@@ -1,0 +1,97 @@
+body {
+  overflow: hidden; /* Esto oculta las barras de desplazamiento */
+}
+
+.home {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #f9c5d1, #fce4ec);
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 0 0 40px 40px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  color: #444;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #666;
+  margin: 15px 0;
+}
+
+.hero button {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: #ff81af;
+  transform: scale(1.05);
+}
+
+/* CATEGORÍAS */
+.categorias {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.categorias h2 {
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  width: 200px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  font-weight: bold;
+  color: #e91e63;
+}
+
+
+/* Estilo para la descripción */
+.intro-description {
+  padding: 20px 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.intro-description h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #d72c6d; /* Color rosa */
+}
+
+.intro-description p {
+  font-size: 1.2em;
+  color: #555; /* Gris oscuro */
+  line-height: 1.6;
+  margin-top: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+

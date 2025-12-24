@@ -1,0 +1,171 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  background-color: #f7b2cf;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.hamburger {
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  .floating-element {
+  display: none; /* Esto elimina el elemento flotante */
+}
+
+}
+
+.logo {
+  font-size: 30px;
+  position: absolute;
+  font-weight: bold;
+  left: 35px;
+  padding: 5px;
+  color: white;
+}
+
+.menu {
+  display:flex;
+position: absolute;
+  gap: 45px;
+  left: 65%;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 20px; 
+}
+
+.menu a:hover {
+  color: #e91e63; /* rosado */
+}
+
+.discount {
+  background-color: #ff5c8a;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart {
+  position: relative;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.login-btn {
+  background-color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+   
+}
+
+.login-btn:hover {
+  background-color: #ff5c8a;}
+
+/* MENÚ LATERAL (side menu) */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -260px; /* Oculto inicialmente */
+  width: 260px;
+  height: 100vh;
+  background-color: transparent; /* Aquí cambiamos a transparente */
+  box-shadow: none; /* Eliminamos la sombra */
+  padding: 25px;
+  transition: left 0.3s ease;
+  z-index: 1001;
+}
+
+.side-menu.open {
+  left: 0; /* Aparece cuando está abierto */
+}
+
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 60px;
+}
+
+.side-menu li {
+  padding: 12px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.Titulo{
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+
+}
+
+.side-menu li:hover {
+  background-color: #f7b2cf;
+  color: white;
+}
+
+/* FONDO OSCURO */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(238, 226, 226, 0.6); /* Ajusta la opacidad si prefieres un fondo util */
+  z-index: 1000;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #c94a7c;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}

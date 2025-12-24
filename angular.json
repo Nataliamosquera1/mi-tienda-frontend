@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "0f1b54f9-c1aa-4a46-8507-78e6eabce417"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -57,18 +58,21 @@
           },
           "defaultConfiguration": "production"
         },
-        "serve": {
-          "builder": "@angular/build:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "carino-mio:build:production"
-            },
-            "development": {
-              "buildTarget": "carino-mio:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
+       "serve": {
+  "builder": "@angular/build:dev-server",
+  "options": {
+    "port": 4200
+  },
+  "configurations": {
+    "production": {
+      "buildTarget": "carino-mio:build:production"
+    },
+    "development": {
+      "buildTarget": "carino-mio:build:development"
+    }
+  },
+  "defaultConfiguration": "development"
+},
         "test": {
           "builder": "@angular/build:unit-test"
         }

@@ -1,0 +1,28 @@
+
+<article class="product-card product-banner">
+  <span class="badge-descuento" *ngIf="descuento">{{ descuento }}%</span>
+
+  <div class="product-media">
+    <img [src]="imagen" [alt]="nombre">
+  </div>
+
+  <div class="product-info">
+    <p class="product-title">{{ nombre }}</p>
+    <div class="product-meta">
+      <p class="product-price">{{ precio | currency:'COP':'symbol-narrow' }}</p>
+      <span class="product-detail">Ver detalles</span>
+    </div>
+  </div>
+
+  <!-- Cantidad + acciones (como tu referencia) -->
+ <!-- Cantidad -->
+<div class="qty-box">
+  <button class="qty-btn" (click)="dec()">−</button>
+  <span class="qty-value">{{ cantidad }}</span>
+  <button class="qty-btn" (click)="inc()">+</button>
+</div>
+
+<!-- Acciones -->
+<button class="btn-outline" (click)="onAdd()">AÑADIR AL CARRITO</button>
+<button class="btn-solid" (click)="onBuy()">COMPRAR AHORA</button>
+

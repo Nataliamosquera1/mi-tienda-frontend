@@ -1,0 +1,63 @@
+.dashboard {
+  padding: 40px;
+}
+
+h1 {
+  font-size: 28px;
+  color: #d66ba0;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card .icon {
+  font-size: 28px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  color: #444;
+}
+
+.card p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #d66ba0;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.actions a {
+  background: #f3c6dc;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.actions a:hover {
+  background: #e9aacb;
+}

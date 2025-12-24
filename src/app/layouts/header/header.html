@@ -1,0 +1,62 @@
+
+<header class="header">
+  <div class="left">
+    <button class="hamburger" (click)="toggleMenu()">☰</button>
+    <span class="logo">Cariño Mío</span>
+  </div>
+  <div style="background:red; color:white; padding:5px">
+  TEST: isLogged = {{ isLogged }}, isAdmin = {{ isAdmin }}, cantidad = {{ cantidad }}
+</div>
+
+  
+  <nav class="menu">
+    <a routerLink="/">Inicio</a>
+    <a routerLink="/productos">Productos</a>
+    <span class="discount">🔥 Descuentos</span>
+  </nav>
+
+  <!-- 👜 CARRITO -->
+  <div
+    class="cart"
+    *ngIf="isLogged && !isAdmin"
+    routerLink="/carrito"
+    (click)="$event.stopPropagation()"
+  >
+    👜
+    <span class="badge" *ngIf="cantidad > 0">{{ cantidad }}</span>
+  </div>
+</header>
+
+<!-- MENÚ HAMBURGUESA -->
+<div class="side-menu" [class.open]="menuAbierto">
+  <ul>
+    <h3>Tu página de confianza</h3>
+
+    <!-- CLIENTE -->
+    <li *ngIf="isLogged && !isAdmin">
+      <a routerLink="/carrito">👜 Mi carrito</a>
+    </li>
+
+    <!-- ADMIN -->
+    <li *ngIf="isAdmin">
+      <a routerLink="/admin/productos">📦 Admin Productos</a>
+    </li>
+    <li *ngIf="isAdmin">
+      <a routerLink="/admin/categorias">📂 Admin Categorías</a>
+    </li>
+
+    <!-- CERRAR SESIÓN -->
+    <li *ngIf="isLogged">
+      <button class="logout-btn" (click)="logout($event)">
+        🚪 Cerrar sesión
+      </button>
+    </li>
+
+    <!-- NO LOGUEADO -->
+    <li *ngIf="!isLogged">
+      <a routerLink="/login">🔐 Iniciar sesión</a>
+    </li>
+  </ul>
+</div>
+
+<div class="overlay" *ngIf="menuAbierto" (click)="toggleMenu()"></div>
