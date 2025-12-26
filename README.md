@@ -1,59 +1,21 @@
-# CarinoMio
+📝 Resumen del Proyecto
+Este proyecto corresponde a la plataforma web “Cariño Mío”, desarrollada con Angular en el frontend y Spring Boot en el backend.
+Su propósito es permitir que clientes y administradores gestionen usuarios, productos y compras, garantizando la seguridad, la integridad de los datos y 
+la escalabilidad del sistema.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
+El sistema fue construido bajo una arquitectura limpia basada en capas, separando responsabilidades y facilitando la incorporación
+ de nuevas funcionalidades sin afectar la estabilidad del proyecto.
+El backend se encarga del manejo de la lógica principal del negocio, validación de datos, control de roles, autenticación mediante JWT y 
+administración de usuarios activos e inactivos.
 
-## Development server
+El frontend está enfocado en ofrecer una experiencia moderna y funcional para el usuario final.
+Entre sus principales características se incluyen:
+Registro de usuarios con validaciones y código especial para acceso administrador.
+Inicio y cierre de sesión con persistencia del usuario autenticado.
+Visualización del catálogo de productos.
+Implementación del carrito de compras con actualización dinámica de cantidades.
+Diferenciación de funcionalidades según el rol del usuario.
+Módulo para solicitar descripciones generadas por IA.
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este proyecto fue desarrollado con un enfoque práctico y formativo, simulando un entorno real de comercio electrónico.
+Se priorizó el uso de buenas prácticas de desarrollo, organización del código y separación de responsabilidades entre capas.
