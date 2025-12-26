@@ -16,7 +16,6 @@ export class HeaderComponent implements DoCheck {
   menuAbierto = false;
   cantidad = 0;
 
-  // 👇 ESTADOS REALES
   isAdmin = false;
   isLogged = false;
 
@@ -27,9 +26,16 @@ export class HeaderComponent implements DoCheck {
   ) {}
 
   ngDoCheck() {
+
     this.isLogged = this.auth.isLogged();
     this.isAdmin = this.auth.isAdmin();
     this.cantidad = this.carritoService.getCantidadTotal();
+
+    console.log('Header State =>', {
+      isLogged: this.isLogged,
+      isAdmin: this.isAdmin,
+      cantidad: this.cantidad
+    });
   }
 
   toggleMenu() {
@@ -37,11 +43,8 @@ export class HeaderComponent implements DoCheck {
   }
 
   logout(event?: Event) {
-  if (event) {
-    event.stopPropagation(); // 🔥 CLAVE
+    if (event) event.stopPropagation();
+    this.auth.logout();
+    this.router.navigate(['/login']);
   }
-  this.auth.logout();
-  this.router.navigate(['/login']);
-}
-
 }

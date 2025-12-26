@@ -1,9 +1,70 @@
-<h2>🛒 Mi carrito</h2>
+<section class="carrito-container">
 
-<div *ngIf="productos.length === 0">
-  Tu carrito está vacío
-</div>
+  <h2 class="titulo-carrito">🛒 Mi carrito</h2>
 
-<div *ngFor="let p of productos">
-  <p>{{ p.nombre }} — {{ p.cantidad }} x ${{ p.precio | number }}</p>
-</div>
+  <div *ngIf="productos.length === 0" class="carrito-vacio">
+    Tu carrito está vacío
+  </div>
+
+  <div *ngIf="productos.length > 0" class="carrito-grid">
+
+    <div class="col-titulo">Producto</div>
+    <div class="col-titulo center">Precio</div>
+    <div class="col-titulo center">Cantidad</div>
+    <div class="col-titulo center">Subtotal</div>
+
+    <div class="carrito-item" *ngFor="let p of productos">
+
+      <!-- Producto -->
+      <div class="producto-info">
+        <img [src]="p.imagen" class="producto-img">
+
+        <div>
+          <p class="producto-nombre">{{ p.nombre }}</p>
+
+          <button class="btn-eliminar" (click)="eliminarProducto(p)">
+            Eliminar
+          </button>
+        </div>
+      </div>
+
+      <!-- Precio -->
+      <p class="precio">${{ p.precio | number }}</p>
+
+      <!-- Cantidad -->
+      <div class="cantidad-box">
+        <button (click)="disminuirCantidad(p)">−</button>
+        <span>{{ p.cantidad }}</span>
+        <button (click)="aumentarCantidad(p)">+</button>
+      </div>
+
+      <!-- Subtotal -->
+      <p class="subtotal">
+        ${{ (p.precio * p.cantidad) | number }}
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- Resumen -->
+  <div *ngIf="productos.length > 0" class="resumen">
+
+    <h3 class="subtotal-texto">
+      SUBTOTAL: ${{ total | number }}
+    </h3>
+
+    <p class="nota">
+      Impuestos y envío se calculan en el pago.
+    </p>
+
+    <button class="btn-pagar">
+      PAGAR
+    </button>
+
+    <a routerLink="/productos" class="seguir">
+      ← Seguir comprando
+    </a>
+  </div>
+
+</section>

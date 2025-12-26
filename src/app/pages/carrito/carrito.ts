@@ -16,4 +16,33 @@ export class Carrito {
   constructor(private carritoService: CarritoService) {
     this.productos = this.carritoService.getProductos();
   }
+  total = 0;
+
+ngOnInit() {
+  this.calcularTotal();
 }
+
+calcularTotal() {
+  this.total = this.productos
+    .reduce((acc, p) => acc + (p.precio * p.cantidad), 0);
+}
+
+aumentarCantidad(p: any) {
+  p.cantidad++;
+  this.calcularTotal();
+}
+
+disminuirCantidad(p: any) {
+  if (p.cantidad > 1) {
+    p.cantidad--;
+    this.calcularTotal();
+  }
+}
+
+eliminarProducto(p: any) {
+  this.productos = this.productos.filter(x => x !== p);
+  this.calcularTotal();
+}
+
+}
+

@@ -44,7 +44,7 @@ export class AuthService {
   }
 
   registro(data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/registro`, data);
+    return this.http.post(`${this.apiUrl}/registrar`, data);
   }
 
   isAdmin(): boolean {

@@ -79,6 +79,7 @@ position: absolute;
 
 .cart {
   position: relative;
+  right: 140px;
   font-size: 22px;
   cursor: pointer;
 }

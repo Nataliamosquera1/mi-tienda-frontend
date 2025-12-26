@@ -14,14 +14,14 @@ import { Router } from '@angular/router';
 export class ProductosComponent {
 
   productos = [
-    { id: 1, nombre: 'Base líquida', precio: 20000, imagen: 'Bases.jpg' },
-    { id: 2, nombre: 'Combo limpiador', precio: 55000, imagen: 'combos.jpg' },
-    { id: 3, nombre: 'Jabón facial', precio: 15000, imagen: 'jabon.jpg' },
-    { id: 4, nombre: 'Loción corporal', precio: 28000, imagen: 'locion.jpg' },
-    { id: 5, nombre: 'Corrector de ojeras', precio: 220000, imagen: 'ojeras.jpg' },
-    { id: 6, nombre: 'Pestañina', precio: 18000, imagen: 'Pestañina.jpg' },
-    { id: 7, nombre: 'Sérum facial', precio: 32000, imagen: 'serum.jpg' },
-    { id: 8, nombre: 'Spray fijador', precio: 20000, imagen: 'spray.jpg' }
+    { id: 1, nombre: 'Base líquida', precio: 20.0000, imagen: 'Bases.jpg' },
+    { id: 2, nombre: 'Combo limpiador', precio: 55.000, imagen: 'combos.jpg' },
+    { id: 3, nombre: 'Jabón facial', precio: 15.000, imagen: 'jabon.jpg' },
+    { id: 4, nombre: 'Loción corporal', precio: 28.000, imagen: 'locion.jpg' },
+    { id: 5, nombre: 'Corrector de ojeras', precio: 22.0000, imagen: 'ojeras.jpg' },
+    { id: 6, nombre: 'Pestañina', precio: 18.000, imagen: 'Pestañina.jpg' },
+    { id: 7, nombre: 'Sérum facial', precio: 32.000, imagen: 'serum.jpg' },
+    { id: 8, nombre: 'Spray fijador', precio: 20.000, imagen: 'spray.jpg' }
   ];
 
   constructor(
