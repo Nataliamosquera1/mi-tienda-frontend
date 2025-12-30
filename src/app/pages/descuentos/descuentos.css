@@ -1,6 +1,6 @@
 /* ===== CONTENEDOR GENERAL ===== */
 .productos-section {
-  padding: 40px 60px;
+  padding: 50px 60px;
   background: #fff;
 }
 
@@ -8,7 +8,7 @@
 .titulo {
   text-align: center;
   font-size: 27px;
-  margin-bottom: 32px;
+  margin-bottom: 10px;
   color: #922020;
   font-weight: 800;
 }

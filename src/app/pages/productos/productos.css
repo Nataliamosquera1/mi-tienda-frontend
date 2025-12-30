@@ -1,6 +1,8 @@
 .productos-section {
-  padding: 40px 60px;
-  background: #fff;
+  
+  padding-top: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .titulo {
@@ -15,7 +17,6 @@
   grid-template-columns: repeat(4, 1fr); /* 🔥 4 arriba, 4 abajo */
   gap: 24px; /* más juntas */
 }
-
 
 .producto-card {
   background: #ece1e1;

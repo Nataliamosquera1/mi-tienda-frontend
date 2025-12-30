@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductoCard } from '../../components/producto-card/producto-card';
 import { CarritoService } from '../../core/services/carrito';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-productos',
@@ -32,6 +33,25 @@ export class ProductosComponent {
   addToCart(producto: any) {
     this.carritoService.agregarProducto(producto);
     console.log('Producto agregado:', producto);
+
+    // 🔥 ALERTA DE SWEETALERT
+    Swal.fire({
+      title: 'Producto agregado 🛒',
+      text: 'El artículo fue añadido correctamente al carrito',
+      icon: 'success',
+      draggable: true,
+      background: '#fff7fb',
+      confirmButtonText: 'Seguir comprando',
+      confirmButtonColor: '#ff80b5',
+      showCancelButton: true,
+      cancelButtonText: 'Ir al carrito',
+      cancelButtonColor: '#888'
+    }).then(res => {
+      if (res.dismiss === Swal.DismissReason.cancel) {
+        this.router.navigate(['/carrito']);
+      }
+      // Si confirma "Seguir comprando", simplemente se cierra la alerta
+    });
   }
 
   buyNow(producto: any) {

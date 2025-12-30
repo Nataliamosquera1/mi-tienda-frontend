@@ -124,3 +124,87 @@
   margin-top: 8px;
   color: #666;
 }
+
+.btn-vaciar {
+  margin-right: 10px;
+  background: #ffd4d4;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-vaciar:hover {
+  background: #ffb3b3;
+}
+
+button[disabled] {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+
+/*carrito responsive*/
+
+.empty-cart-container {
+  --shadow: 0 5px 15px #08080826;
+  --shadow-active: 0 5px 5px #0e0d0d26;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  background: linear-gradient(#fafafa,#ebebeb);
+  padding: 2rem 2.5rem;
+  margin: 6rem auto;
+
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: .2s ease all;
+  max-width: 500px;
+  top: 100px;
+}
+
+.empty-cart-container:hover {
+  box-shadow: var(--shadow-active);
+}
+
+.text-content {
+  font-size: 18px;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.cart-icon-box {
+  margin-bottom: 1rem;
+}
+
+.cart-icon {
+  width: 70px;
+  opacity: .85;
+  transition: .25s;
+}
+
+.cart-icon:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.btn-primary {
+  margin-top: .5rem;
+  padding: .8rem 1.8rem;
+  border-radius: 12px;
+  font-weight: 600;
+  background: #ff7cac;
+  border: none;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}

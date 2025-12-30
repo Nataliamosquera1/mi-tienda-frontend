@@ -3,6 +3,7 @@ import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../core/services/auth';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -53,19 +54,32 @@ export class Registro {
 
     this.cargando = true;
 
-   this.authService.registro(payload).subscribe({
-  next: () => {
-    this.cargando = false;
-    this.router.navigate(['/login']);
-  },
-  error: (err: any) => {   // ✅ AQUÍ
-    this.cargando = false;
+    this.authService.registro(payload).subscribe({
+      next: () => {
+        this.cargando = false;
 
-    if (err.status === 409) this.error = 'El correo ya está registrado.';
-    else if (err.status === 0) this.error = 'No hay conexión con el servidor.';
-    else this.error = 'Ocurrió un error inesperado.';
-  }
-});
+        // 🔥 ALERTA CON SWEETALERT
+        Swal.fire({
+          title: '¡Registro exitoso! 🎀',
+          text: 'Tu cuenta fue creada correctamente',
+          icon: 'success',
+          draggable: true,
+          background: '#fff8fb',
+          color: '#333',
+          confirmButtonText: 'Continuar',
+          confirmButtonColor: '#ff7ab8'
+        }).then(() => {
+          // Redirigir al login después de cerrar la alerta
+          this.router.navigate(['/login']);
+        });
+      },
+      error: (err: any) => {
+        this.cargando = false;
 
+        if (err.status === 409) this.error = 'El correo ya está registrado.';
+        else if (err.status === 0) this.error = 'No hay conexión con el servidor.';
+        else this.error = 'Ocurrió un error inesperado.';
+      }
+    });
   }
 }
