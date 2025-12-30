@@ -1,0 +1,43 @@
+<section class="productos-section">
+
+  <h2 class="titulo">Promociones especiales 🔥</h2>
+
+  <div class="productos-grid">
+
+    <div class="producto-card" *ngFor="let p of promociones">
+
+      <div class="imagen-container">
+        <img [src]="p.imagen" [alt]="p.nombre">
+      </div>
+
+      <div class="info">
+
+        <h3>{{ p.nombre }}</h3>
+
+        <p class="descripcion">
+          {{ p.descripcion }}
+        </p>
+
+        <p class="precio-anterior">
+          $ {{ p.precioAnterior | number }}
+        </p>
+
+        <p class="precio">
+          $ {{ p.precioNuevo | number }}
+        </p>
+
+        <span class="badge-descuento">
+          -{{ p.descuento }}%
+        </span>
+
+        <button (click)="addToCart(p)">
+          Añadir al carrito
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

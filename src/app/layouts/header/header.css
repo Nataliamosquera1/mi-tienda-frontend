@@ -47,29 +47,43 @@ html, body {
 .menu {
   display:flex;
 position: absolute;
-  gap: 45px;
+  gap: 59px;
   left: 65%;
+  top: 20px;
 }
 
 .menu a {
   text-decoration: none;
   color: white;
   font-weight: 500;
-  font-size: 20px; 
+  font-size: 23px; 
 }
 
 .menu a:hover {
   color: #e91e63; /* rosado */
 }
 
+.discount :hover {
+  background-color: #e91e63;
+}
+
 .discount {
-  background-color: #ff5c8a;
+display:flex;
+position: absolute;
+  gap: 59px;
+  left: 78%;
+  top: 15px;
+  background-color: #f86c94;
   color: white;
   padding: 5px 12px;
   border-radius: 20px;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 19px; 
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
 }
+
+
 
 .right {
   display: flex;

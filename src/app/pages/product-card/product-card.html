@@ -3,7 +3,25 @@
   <img [src]="imagen" [alt]="nombre">
 
   <h4>{{ nombre }}</h4>
-  <p>$ {{ precio | number }}</p>
+
+  <div class="price-box">
+
+    <!-- Precio anterior (opcional) -->
+    <span class="old-price" *ngIf="precioAnterior">
+      $ {{ precioAnterior | number }}
+    </span>
+
+    <!-- Precio con descuento o actual -->
+    <span class="new-price">
+      $ {{ precioFinal | number }}
+    </span>
+
+    <!-- Etiqueta de descuento -->
+    <span class="badge-descuento" *ngIf="descuento">
+      -{{ descuento }}%
+    </span>
+
+  </div>
 
   <div class="cantidad-box">
     <button (click)="restar()">−</button>
@@ -11,9 +29,7 @@
     <button (click)="sumar()">+</button>
   </div>
 
-  <!-- 🔥 AQUÍ ESTABA EL PROBLEMA -->
-  <button (click)="agregarAlCarrito()">🛒</button>
-<button (click)="comprarAhora()">Comprar</button>
-
+  <button (click)="agregarAlCarrito()">Añadir al carrito</button>
+  <button (click)="comprarAhora()">Comprar ahora</button>
 
 </div>

@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 // Guards
 import { authGuard } from './core/guards/auth-guard';
-import { adminGuard } from './core/guards/admin.guard';
+
 
 // Layouts
 import { MainLayout } from './layouts/MainLayout/main-layout';
@@ -17,13 +17,11 @@ import { ProductoDetalle } from './pages/producto-detalle/producto-detalle';
 import { Categorias } from './pages/categorias/categorias';
 import { Carrito } from './pages/carrito/carrito';
 import { Perfil } from './pages/perfil/perfil';
+import { Descuentos } from './pages/descuentos/descuentos';
 
 // Admin Pages
-import { AdminDashboard } from './pages/admin/admin-dashboard/admin-dashboard';
-import { AdminProductos } from './pages/admin/admin-productos/admin-productos';
-import { AdminCategorias } from './pages/admin/admin-categorias/admin-categorias';
-import { AdminSubcategorias } from './pages/admin/admin-subcategorias/admin-subcategorias';
-import { AdminUsuarios } from './pages/admin/admin-usuarios/admin-usuarios';
+import { AdminDashboard } from './pages/admin/admin-dashboard/admin-dashboard'
+
 
 export const routes: Routes = [
 
@@ -39,7 +37,11 @@ export const routes: Routes = [
       { path: 'login', component: Login },
       { path: 'registro', component: Registro },
       { path: 'carrito', component: Carrito, canActivate: [authGuard] },
-      { path: 'perfil', component: Perfil, canActivate: [authGuard] }
+      { path: 'perfil', component: Perfil, canActivate: [authGuard] },
+      { path: 'descuentos', loadComponent: () => import('./pages/descuentos/descuentos')
+      .then(m => m.Descuentos)
+},
+
     ]
   },
 

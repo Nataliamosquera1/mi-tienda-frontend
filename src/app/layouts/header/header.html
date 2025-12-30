@@ -8,8 +8,8 @@
   <nav class="menu">
     <a routerLink="/">Inicio</a>
     <a routerLink="/productos">Productos</a>
-    <span class="discount">🔥 Descuentos</span>
   </nav>
+  <a   class="discount" routerLink="/descuentos"> 🔥Descuentos</a>
 
   <!-- 👜 CARRITO -->
   <div
@@ -32,12 +32,23 @@
       <a routerLink="/carrito">👜 Mi carrito</a>
     </li>
 
+    <li *ngIf="isLogged && !isAdmin">
+      <a routerLink="">🤠 Nueva colecciòn</a>
+    </li>
+    <li *ngIf="isLogged && !isAdmin">
+      <a routerLink="">📈 Compras mayoristas</a>
+    </li>
+
     <!-- ADMIN -->
     <li *ngIf="isAdmin">
-      <a routerLink="/admin/productos">📦 Admin Productos</a>
+      <a routerLink="/admin/productos">📦 Agregar productos</a>
     </li>
     <li *ngIf="isAdmin">
-      <a routerLink="/admin/categorias">📂 Admin Categorías</a>
+      <a routerLink="/admin/categorias">📂 Crear categorias</a>
+    </li>
+
+     <li *ngIf="isAdmin">
+      <a routerLink="/admin/categorias">📂 Desactivar usuarios</a>
     </li>
 
     <!-- CERRAR SESIÓN -->
