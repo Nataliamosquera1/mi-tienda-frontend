@@ -42,3 +42,16 @@
 .admin-content {
   padding: 25px;
 }
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .admin-container {
+    grid-template-columns: 1fr;
+  }
+  .admin-sidebar {
+    display: none; /* Hide sidebar on mobile, or add toggle if needed */
+  }
+  .admin-content {
+    padding: 15px;
+  }
+}

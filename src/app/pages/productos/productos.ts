@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductoCard } from '../../components/producto-card/producto-card';
 import { CarritoService } from '../../core/services/carrito';
 import { Router } from '@angular/router';
+import { AuthService } from '../../core/services/auth';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,7 +13,7 @@ import Swal from 'sweetalert2';
   templateUrl: './productos.html',
   styleUrls: ['./productos.css']
 })
-export class ProductosComponent {
+export class ProductosComponent implements OnInit {
 
   productos = [
     { id: 1, nombre: 'Base líquida', precio: 50900, imagen: 'Bases.jpg' },
@@ -25,10 +26,17 @@ export class ProductosComponent {
     { id: 8, nombre: 'Spray corporal', precio: 68900, imagen: 'spray.jpg' }
   ];
 
+  isAdmin = false;
+
   constructor(
     private carritoService: CarritoService,
-    private router: Router
+    private router: Router,
+    private auth: AuthService
   ) {}
+
+  ngOnInit() {
+    this.isAdmin = this.auth.isAdmin();
+  }
 
   addToCart(producto: any) {
     this.carritoService.agregarProducto(producto);
@@ -57,5 +65,26 @@ export class ProductosComponent {
   buyNow(producto: any) {
     this.carritoService.agregarProducto(producto);
     this.router.navigate(['/carrito']);
+  }
+
+  agregarProducto() {
+    this.router.navigate(['/admin/productos']);
+  }
+
+  editProduct(id: number) {
+    alert('Editar producto ID: ' + id);
+    // Navegar a edición
+  }
+
+  toggleActive(id: number) {
+    // Llamar al servicio para toggle activo
+    alert('Toggle activo para ID: ' + id);
+  }
+
+  deleteProduct(id: number) {
+    if (confirm('¿Eliminar producto?')) {
+      // Llamar al servicio
+      alert('Eliminar ID: ' + id);
+    }
   }
 }

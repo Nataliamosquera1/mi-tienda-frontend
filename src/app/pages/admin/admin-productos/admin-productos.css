@@ -1,0 +1,62 @@
+.admin-section {
+  padding: 20px;
+}
+
+h1 {
+  color: #d57283;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background: #d57283;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.btn-primary:hover {
+  background: #e91e63;
+}
+
+.productos-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.productos-list th, .productos-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.productos-list th {
+  background-color: #f2f2f2;
+}
+
+.productos-list button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.productos-list button:first-child {
+  background: #4CAF50;
+  color: white;
+}
+
+.productos-list button:nth-child(2) {
+  background: #ff9800;
+  color: white;
+}
+
+.productos-list button:last-child {
+  background: #f44336;
+  color: white;
+}

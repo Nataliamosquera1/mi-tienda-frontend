@@ -84,7 +84,7 @@
     <!-- CONTENEDOR FLEX DE BOTONES -->
     <div class="botones-carrito">
   
-      <button class="btn-pagar">
+      <button class="btn-pagar" (click)="pagar()" [disabled]="!productos.length || total <= 0">
         PAGAR
       </button>
 
