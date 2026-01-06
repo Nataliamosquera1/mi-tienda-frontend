@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CategoriaCard } from '../../components/categoria-card/categoria-card';
 import { SubcategoriaCard } from '../../components/subcategoria-card/subcategoria-card';
 import { AuthService } from '../../core/services/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categorias',
@@ -13,7 +14,6 @@ import { AuthService } from '../../core/services/auth';
 })
 export class Categorias implements OnInit {
 
-  // ⭐ Mantengo tus imágenes y datos originales
   categorias = [
     {
       id: 1,
@@ -50,18 +50,23 @@ export class Categorias implements OnInit {
 
   isAdmin = false;
 
-  constructor(private auth: AuthService) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.isAdmin = this.auth.isAdmin();
   }
 
-  // ⭐ Cargar subcategorías según la categoría seleccionada
+  // =============================
+  // SUBCATEGORÍAS POR CATEGORÍA
+  // =============================
   viewSubcategorias(categoriaId: number) {
 
     switch (categoriaId) {
 
-      case 1: // Maquillaje
+      case 1:
         this.subcategorias = [
           { id: 1, nombre: 'Labiales', descripcion: 'Larga duración', categoriaId, activo: true },
           { id: 2, nombre: 'Bases', descripcion: 'Alta cobertura', categoriaId, activo: true },
@@ -69,7 +74,7 @@ export class Categorias implements OnInit {
         ];
         break;
 
-      case 2: // Cuidado facial
+      case 2:
         this.subcategorias = [
           { id: 4, nombre: 'Limpieza facial', descripcion: 'Espumas y geles', categoriaId, activo: true },
           { id: 5, nombre: 'Cremas hidratantes', descripcion: 'Piel saludable', categoriaId, activo: true },
@@ -77,14 +82,14 @@ export class Categorias implements OnInit {
         ];
         break;
 
-      case 3: // Cabello
+      case 3:
         this.subcategorias = [
           { id: 7, nombre: 'Shampoo', descripcion: 'Nutrición y brillo', categoriaId, activo: true },
           { id: 8, nombre: 'Tratamientos capilares', descripcion: 'Keratina, ampollas', categoriaId, activo: true }
         ];
         break;
 
-      case 4: // Perfumería
+      case 4:
         this.subcategorias = [
           { id: 9, nombre: 'Perfumes femeninos', descripcion: 'Esencias suaves y dulces', categoriaId, activo: true },
           { id: 10, nombre: 'Splash corporales', descripcion: 'Aromas frescos', categoriaId, activo: true }
@@ -96,7 +101,7 @@ export class Categorias implements OnInit {
   }
 
   // =============================
-  //   ACCIONES ADMIN
+  // ACCIONES ADMIN
   // =============================
 
   agregarCategoria() {
@@ -131,8 +136,21 @@ export class Categorias implements OnInit {
     }
   }
 
+  // =============================
+  // 🚀 ENVIAR SUBCATEGORÍA A PRODUCTOS
+  // =============================
   viewProductos(subcategoriaId: number) {
-    alert('Ver productos de subcategoría ID: ' + subcategoriaId);
+
+    console.log("Subcategoría seleccionada:", subcategoriaId);
+
+    this.router.navigate(
+      ['/productos'],
+      {
+        queryParams: {
+          subcategoria: subcategoriaId
+        }
+      }
+    );
   }
 
 }

@@ -30,4 +30,8 @@ export class ProductoService {
   eliminarProducto(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+
+ getProductosPorSubcategoria(idSubcategoria: number): Observable<any> {
+  return this.http.get(`${this.apiUrl}/subcategoria/${idSubcategoria}`);
+}
 }
