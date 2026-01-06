@@ -26,3 +26,10 @@
 <button class="btn-outline" (click)="onAdd()">AÑADIR AL CARRITO</button>
 <button class="btn-solid" (click)="onBuy()">COMPRAR AHORA</button>
 
+<!-- Acciones Admin -->
+<div *ngIf="isAdmin" class="admin-actions">
+  <button class="btn-admin edit" (click)="onEdit()">✏️ Editar</button>
+  <button class="btn-admin toggle" (click)="onToggleActive()">🚫 Desactivar</button>
+  <button class="btn-admin delete" (click)="onDelete()">🗑️ Eliminar</button>
+</div>
+

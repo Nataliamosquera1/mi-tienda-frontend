@@ -238,5 +238,37 @@
   cursor: pointer;
 }
 
+/* Admin Actions */
+.admin-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-admin {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-admin.edit {
+  background: #2196F3;
+  color: white;
+}
+
+.btn-admin.toggle {
+  background: #FF9800;
+  color: white;
+}
+
+.btn-admin.delete {
+  background: #F44336;
+  color: white;
+}
+
 
 

@@ -1,0 +1,39 @@
+.admin-section {
+  padding: 20px;
+}
+
+h1 {
+  color: #d57283;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background: #d57283;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e91e63;
+}

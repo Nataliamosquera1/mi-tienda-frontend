@@ -1,1 +1,38 @@
-<p>categorias works!</p>
+<section class="categorias-section">
+  <div *ngIf="isAdmin" class="admin-buttons">
+    <button (click)="agregarCategoria()">➕ Agregar categoría</button>
+  </div>
+
+  <h2>Nuestras Categorías</h2>
+
+  <div class="categorias-grid">
+    <app-categoria-card
+      *ngFor="let c of categorias"
+      [id]="c.id"
+      [nombre]="c.nombre"
+      [descripcion]="c.descripcion"
+      [imagen]="c.imagen"
+      [isAdmin]="isAdmin"
+      (editCategoria)="editCategoria($event)"
+      (toggleActive)="toggleActiveCategoria($event)"
+      (deleteCategoria)="deleteCategoria($event)"
+      (viewSubcategorias)="viewSubcategorias($event)"
+    ></app-categoria-card>
+  </div>
+
+  <div *ngIf="selectedCategoriaId" class="subcategorias-section">
+    <h3>Subcategorías</h3>
+    <app-subcategoria-card
+      *ngFor="let s of subcategorias"
+      [id]="s.id"
+      [nombre]="s.nombre"
+      [descripcion]="s.descripcion"
+      [categoriaId]="s.categoriaId"
+      [isAdmin]="isAdmin"
+      (editSubcategoria)="editSubcategoria($event)"
+      (toggleActive)="toggleActiveSubcategoria($event)"
+      (deleteSubcategoria)="deleteSubcategoria($event)"
+      (viewProductos)="viewProductos($event)"
+    ></app-subcategoria-card>
+  </div>
+</section>

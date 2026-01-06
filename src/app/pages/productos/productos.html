@@ -1,4 +1,8 @@
 <section class="productos-section">
+  <div *ngIf="isAdmin" class="admin-buttons">
+    <button (click)="agregarProducto()">➕ Agregar producto</button>
+  </div>
+
   <h2 class="titulo">Nuestros productos 🔔</h2>
 
   <div class="productos-grid">
@@ -8,8 +12,12 @@
       [nombre]="p.nombre"
       [precio]="p.precio"
       [imagen]="p.imagen"
+      [isAdmin]="isAdmin"
       (addToCart)="addToCart($event)"
       (buyNow)="buyNow($event)"
+      (editProduct)="editProduct($event)"
+      (toggleActive)="toggleActive($event)"
+      (deleteProduct)="deleteProduct($event)"
     ></app-producto-card>
   </div>
 </section>

@@ -190,3 +190,47 @@ button[disabled] {
   transform: translateY(-1px);
   background: #fcb6cc;
 }
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .carrito-container {
+    padding: 20px 20px;
+  }
+  .titulo-carrito {
+    font-size: 24px;
+    margin-top: 60px;
+  }
+  .carrito-grid {
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+  }
+  .producto-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .producto-img {
+    width: 60px;
+  }
+  .resumen {
+    text-align: center;
+  }
+  .botones-carrito {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn-pagar, .btn-vaciar {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-carrito {
+    font-size: 20px;
+  }
+  .empty-cart-container {
+    padding: 1.5rem 1rem;
+    margin: 4rem auto;
+  }
+}

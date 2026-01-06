@@ -21,6 +21,8 @@ import { Descuentos } from './pages/descuentos/descuentos';
 
 // Admin Pages
 import { AdminDashboard } from './pages/admin/admin-dashboard/admin-dashboard'
+import { AdminProductosComponent } from './pages/admin/admin-productos/admin-productos';
+import { AdminProductosCrearComponent } from './pages/admin/admin-productos-crear/admin-productos-crear';
 
 
 export const routes: Routes = [
@@ -36,7 +38,7 @@ export const routes: Routes = [
       { path: 'categorias', component: Categorias },
       { path: 'login', component: Login },
       { path: 'registro', component: Registro },
-      { path: 'carrito', component: Carrito, canActivate: [authGuard] },
+      { path: 'carrito', component: Carrito },
       { path: 'perfil', component: Perfil, canActivate: [authGuard] },
       { path: 'descuentos', loadComponent: () => import('./pages/descuentos/descuentos')
       .then(m => m.Descuentos)
@@ -52,7 +54,8 @@ export const routes: Routes = [
     //canActivate: [authGuard, adminGuard],
     children: [
       { path: '', component: AdminDashboard },
-     
+      { path: 'productos', component: AdminProductosComponent },
+      { path: 'productos/crear', component: AdminProductosCrearComponent },
     ]
   },
 

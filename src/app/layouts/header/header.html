@@ -1,8 +1,6 @@
 <header class="header">
-  <div class="left">
-    <button class="hamburger" (click)="toggleMenu()">☰</button>
-    <span class="logo">Cariño Mío</span>
-  </div>
+  <button class="hamburger" (click)="toggleMenu()">☰</button>
+  <span class="logo">Cariño Mío</span>
 
   <nav class="menu">
     <a routerLink="/">Inicio</a>
@@ -13,23 +11,15 @@
     🔥Descuentos
   </a>
 
-
   <!-- 👜 CARRITO -->
   <div
     class="cart"
-    *ngIf="isLogged && !isAdmin"
     routerLink="/carrito">
-
     👜
     <span class="badge" *ngIf="cantidad > 0">
       {{ cantidad }}
     </span>
   </div>
-
-  <li *ngIf="isAdmin">
-  <a routerLink="/admin">👑 Panel administrador</a>
-</li>
-
 </header>
 
 
@@ -39,10 +29,16 @@
 
     <h3>Tu página de confianza</h3>
 
-    <!-- CLIENTE -->
-    <li *ngIf="isLogged && !isAdmin">
-      <a routerLink="/carrito">👜 Mi carrito</a>
+    <li><a routerLink="/">🏠 Inicio</a></li>
+    <li><a routerLink="/productos">📦 Productos</a></li>
+    <li><a routerLink="/descuentos">🔥 Descuentos</a></li>
+    <li><a routerLink="/carrito">👜 Mi carrito</a></li>
+
+    <li *ngIf="isAdmin">
+      <a routerLink="/admin">👑 Panel administrador</a>
     </li>
+
+    <!-- CLIENTE -->
 
     <li *ngIf="isLogged && !isAdmin">
   <button class="link-btn"

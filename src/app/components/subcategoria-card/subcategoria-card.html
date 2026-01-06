@@ -1,0 +1,14 @@
+<article class="subcategoria-card">
+  <div class="subcategoria-info">
+    <h4>{{ nombre }}</h4>
+    <p>{{ descripcion }}</p>
+    <button class="btn-view" (click)="onViewProductos()">Ver productos</button>
+  </div>
+
+  <!-- Acciones Admin -->
+  <div *ngIf="isAdmin" class="admin-actions">
+    <button class="btn-admin edit" (click)="onEdit()">✏️ Editar</button>
+    <button class="btn-admin toggle" (click)="onToggleActive()">🚫 Desactivar</button>
+    <button class="btn-admin delete" (click)="onDelete()">🗑️ Eliminar</button>
+  </div>
+</article>

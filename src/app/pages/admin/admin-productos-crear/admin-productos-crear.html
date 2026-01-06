@@ -1,0 +1,12 @@
+<section class="admin-section">
+  <h1>➕ Crear Nuevo Producto</h1>
+
+  <form (ngSubmit)="crearProducto()">
+    <label>Nombre: <input type="text" [(ngModel)]="producto.nombre" name="nombre" required></label>
+    <label>Precio: <input type="number" [(ngModel)]="producto.precio" name="precio" required></label>
+    <label>Stock: <input type="number" [(ngModel)]="producto.stock" name="stock" required></label>
+    <label>Imagen: <input type="text" [(ngModel)]="producto.imagen" name="imagen"></label>
+    <label>Activo: <input type="checkbox" [(ngModel)]="producto.activo" name="activo"></label>
+    <button type="submit">Crear Producto</button>
+  </form>
+</section>

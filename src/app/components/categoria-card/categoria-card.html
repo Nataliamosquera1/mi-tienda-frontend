@@ -1,0 +1,18 @@
+<article class="categoria-card">
+  <div class="categoria-media">
+    <img [src]="imagen" [alt]="nombre">
+  </div>
+
+  <div class="categoria-info">
+    <h3>{{ nombre }}</h3>
+    <p>{{ descripcion }}</p>
+    <button class="btn-view" (click)="onViewSubcategorias()">Ver subcategorías</button>
+  </div>
+
+  <!-- Acciones Admin -->
+  <div *ngIf="isAdmin" class="admin-actions">
+    <button class="btn-admin edit" (click)="onEdit()">✏️ Editar</button>
+    <button class="btn-admin toggle" (click)="onToggleActive()">🚫 Desactivar</button>
+    <button class="btn-admin delete" (click)="onDelete()">🗑️ Eliminar</button>
+  </div>
+</article>

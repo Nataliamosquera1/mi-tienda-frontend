@@ -1,0 +1,64 @@
+.subcategoria-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.subcategoria-info h4 {
+  margin: 0 0 8px;
+  color: #d57283;
+}
+
+.subcategoria-info p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.btn-view {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-view:hover {
+  background: #45a049;
+}
+
+/* Admin Actions */
+.admin-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-admin {
+  padding: 5px 8px;
+  border: none;
+  border-radius: 5px;
+  font-size: 11px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-admin.edit {
+  background: #2196F3;
+  color: white;
+}
+
+.btn-admin.toggle {
+  background: #FF9800;
+  color: white;
+}
+
+.btn-admin.delete {
+  background: #F44336;
+  color: white;
+}
