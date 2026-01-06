@@ -1,5 +1,17 @@
+/* ==========================
+   SECCIÓN CATEGORÍAS
+========================== */
 .categorias-section {
-  padding: 20px;
+  padding-top: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 27px;
+  margin-bottom: 40px;
+  color: #d57283; ;
 }
 
 .admin-buttons {
@@ -16,25 +28,72 @@
   font-size: 16px;
   cursor: pointer;
   font-weight: 500;
+  transition: background 0.3s;
 }
 
 .admin-buttons button:hover {
-  background: #e91e63;
+  background: #f5b3c9;
 }
 
-h2 {
-  text-align: center;
-  color: #d57283;
-  margin-bottom: 30px;
-}
-
+/* GRID CATEGORÍAS */
 .categorias-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
   margin-bottom: 40px;
 }
 
+/* CARD DE CATEGORÍA */
+app-categoria-card {
+  background: #ffffff; /* fondo blanco */
+  border-radius: 22px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* sombra suave */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+app-categoria-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.imagen-container {
+  width: 100%;
+  background: #f7e6ea;
+}
+
+.imagen-container img {
+  width: 100%;
+  height: auto;       /* altura automática para mantener proporción */
+  max-height: 250px;  /* límite máximo de altura */
+  object-fit: contain; /* muestra la imagen completa */
+  display: block;
+}
+
+/* TEXTO */
+.info {
+  padding: 20px;
+  text-align: center;
+}
+
+.info h3 {
+   font-size: 20px;
+  color: #d57283; /* rosa medio/strong */
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.info p {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 15px;
+}
+
+/* ==========================
+   SUBCATEGORÍAS
+========================== */
 .subcategorias-section {
   margin-top: 40px;
 }
@@ -43,4 +102,101 @@ h2 {
   text-align: center;
   color: #d57283;
   margin-bottom: 20px;
+}
+
+.subcategorias-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* CARD DE SUBCATEGORÍA */
+app-subcategoria-card {
+  background: #ece1e1;
+  border-radius: 22px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+app-subcategoria-card:hover {
+  transform: translateY(-5px);
+}
+
+.sub-imagen-container {
+  width: 100%;
+  background: #f7e6ea;
+}
+
+.sub-imagen-container img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  display: block;
+}
+
+/* TEXTO SUBCATEGORÍAS */
+.sub-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.sub-info h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.sub-info p {
+  font-size: 14px;
+  color: #f06292;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 1024px) {
+  .categorias-grid,
+  .subcategorias-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .categorias-grid,
+  .subcategorias-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .categorias-section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .titulo {
+    font-size: 24px;
+  }
+  .admin-buttons button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categorias-grid,
+  .subcategorias-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .titulo {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  .categorias-section {
+    padding-top: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

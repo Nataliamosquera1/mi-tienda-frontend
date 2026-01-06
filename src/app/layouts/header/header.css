@@ -37,19 +37,21 @@ html, body {
   font-size: 30px;
   font-weight: bold;
   color: #d57283;
+  left: 70px;
+  position: absolute;
 }
 
 .menu {
   display: flex;
-  gap: 20px;
-  align-items: center;
+  gap: 190px;
+  text-align: center;
 }
 
 .menu a {
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .menu a:hover {
@@ -63,7 +65,9 @@ html, body {
   border-radius: 20px;
   font-size: 16px;
   text-decoration: none;
-  font-weight: 500;
+  right: 260px;
+  position: absolute;
+ 
 }
 
 .discount:hover {
@@ -72,8 +76,9 @@ html, body {
 
 .cart {
   position: relative;
-  font-size: 24px;
+  font-size: 23px;
   cursor: pointer;
+  right: 110px;
 }
 
 .badge {

@@ -46,7 +46,7 @@ export class Login {
         }
       },
       error: (err) => {
-        this.error = 'Credenciales incorrectas';
+        this.error = 'Contraseña o correo incorrectos';
         console.error(err);
       }
     });

@@ -1,14 +1,13 @@
 import { Routes } from '@angular/router';
 
-// Guards
+// 🛡 Guards
 import { authGuard } from './core/guards/auth-guard';
 
-
-// Layouts
+// 🧩 Layouts
 import { MainLayout } from './layouts/MainLayout/main-layout';
 import { AdminLayout } from './layouts/admin-layout/admin-layout';
 
-// Pages públicas
+// 🌸 Pages públicas
 import { Home } from './pages/home/home';
 import { Login } from './pages/login/login';
 import { Registro } from './pages/registro/registro';
@@ -19,10 +18,11 @@ import { Carrito } from './pages/carrito/carrito';
 import { Perfil } from './pages/perfil/perfil';
 import { Descuentos } from './pages/descuentos/descuentos';
 
-// Admin Pages
-import { AdminDashboard } from './pages/admin/admin-dashboard/admin-dashboard'
+// 🛠 Admin Pages
+import { AdminDashboard } from './pages/admin/admin-dashboard/admin-dashboard';
 import { AdminProductosComponent } from './pages/admin/admin-productos/admin-productos';
 import { AdminProductosCrearComponent } from './pages/admin/admin-productos-crear/admin-productos-crear';
+import { AdminCategorias } from './pages/admin/admin-categorias/admin-categorias';
 
 
 export const routes: Routes = [
@@ -35,27 +35,37 @@ export const routes: Routes = [
       { path: '', component: Home },
       { path: 'productos', component: ProductosComponent },
       { path: 'producto/:id', component: ProductoDetalle },
+
+      // 👇 Página pública de categorías
       { path: 'categorias', component: Categorias },
+
       { path: 'login', component: Login },
       { path: 'registro', component: Registro },
       { path: 'carrito', component: Carrito },
-      { path: 'perfil', component: Perfil, canActivate: [authGuard] },
-      { path: 'descuentos', loadComponent: () => import('./pages/descuentos/descuentos')
-      .then(m => m.Descuentos)
-},
 
+      { path: 'perfil', component: Perfil, canActivate: [authGuard] },
+
+      {
+        path: 'descuentos',
+        loadComponent: () =>
+          import('./pages/descuentos/descuentos').then(m => m.Descuentos)
+      },
     ]
   },
 
-  // 🔐 ADMIN
+  // 🔐 ADMIN PANEL
   {
     path: 'admin',
     component: AdminLayout,
-    //canActivate: [authGuard, adminGuard],
+    // canActivate: [authGuard, adminGuard],
     children: [
       { path: '', component: AdminDashboard },
+
       { path: 'productos', component: AdminProductosComponent },
       { path: 'productos/crear', component: AdminProductosCrearComponent },
+
+      // 👇 ESTA ES LA RUTA QUE TE FALTABA
+      { path: 'categorias', component: AdminCategorias },
     ]
   },
 
